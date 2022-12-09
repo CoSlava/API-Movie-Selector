@@ -15,6 +15,8 @@ if(searchBtn){
                 
                 document.getElementById("add-to-watchlist-btn").addEventListener('click', () =>{
                     myWatchList = JSON.parse(localStorage.getItem("myWatchList"))
+                    myWatchList === null ? myWatchList = [] : myWatchList = JSON.parse(localStorage.getItem("myWatchList"))
+                    
                     let currentMovie = data
                     myWatchList.push(currentMovie)
                     
@@ -58,6 +60,8 @@ if(window.location.href.includes("watchlist")){
             document.getElementById("empty-watchlist").classList.add("hidden")
             document.getElementById("empty-watchlist2").classList.add("hidden")
         })
+    } else {
+        storedMovies = []
     }
     
         document.addEventListener('click', e =>{
